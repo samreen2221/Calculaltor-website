@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="Page2.html">
+
+	<style type="text/css">
+		.calc{
+		
+			background-image: linear-gradient(to bottom, #EF3B36,#FFFFFF);
+			height: 370px;
+			width: 250px;
+			margin: 10% 60%;
+			border-radius: 20px;
+			padding: 20px;
+		}
+		input{
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			color: white;
+			border-color: black;
+			border-radius: 10px;
+			margin: 4px;
+			font-weight: bolder;
+
+			transition-duration: 0.5s;
+
+
+		}
+		.operator{
+			background-color: orange;
+
+		}
+		.ac{
+			width: 107px;
+			margin-right: 10px;
+			background-color: red;
+
+		}
+		.op{
+			height: 70px;
+			width: 230px;
+			background-color: black;
+			font-size: 25px;
+			text-align: right;
+
+
+			
+		}
+		#allclear{
+			background-color: orange;
+
+		}
+		.operator:hover
+		{
+			transform: scale(0.9);
+
+
+		}
+		input[type="button"]:hover{
+			transform: scale(0.9);
+			box-shadow: 0px 0px 5px red;
+		}
+
+	</style>
+</head>
+<body style="background-image: url(https://www.shutterstock.com/image-illustration/3d-math-education-symbols-on-260nw-2175037945.jpg); background-repeat: no-repeat; background-size: cover; " >
+<div class="calc">
+	
+
+	<form>
+		<div>
+			<input type="text" name="op" class="op">
+		</div>
+		<div>
+			<input type="button" value="Ac" onclick="op.value=''" class="ac" class="operator">
+			<input type="button" value="C" onclick="op.value=c(op.value);" >
+			<input type="button" value="%" onclick="op.value+='%'" class="operator" >
+
+		</div>
+		<div>
+			<input type="button" value="7" onclick="op.value+='7'"  >
+			<input type="button" value="8" onclick="op.value+='8'"  >
+			<input type="button" value="9" onclick="op.value+='9'"  >
+			<input type="button" value="+" onclick="op.value+='+'" class="operator" >
+			
+		</div>
+		<div>
+			<input type="button" value="4" onclick="op.value+='4'"  >
+			<input type="button" value="5" onclick="op.value+='5'"  >
+			<input type="button" value="6" onclick="op.value+='6'"  >
+			<input type="button" value="-" onclick="op.value+='-'" class="operator" >
+		</div>
+		<div>
+			<input type="button" value="1" onclick="op.value+='1'"  >
+			<input type="button" value="2" onclick="op.value+='2'"  >
+			<input type="button" value="3" onclick="op.value+='3'"  >
+			<input type="button" value="x" onclick="op.value+='x'" class="operator" >
+		</div>
+		<div>
+			<input type="button" value="." onclick="op.value+='.'"  >
+			<input type="button" value="0" onclick="op.value+='0'"  >
+			<input type="button" value="=" onclick="op.value=eval(op.value)">
+
+			<input type="button" value="/" onclick="op.value+='/'" class="operator" >
+		</div>
+		<script type="text/javascript">
+			function c(op)
+			 {
+				let temp=op.split('');
+				temp.pop();
+				let res=temp.join('');
+				return res;
+			}
+		</script>
+	</form>
+</body>
+</html>
